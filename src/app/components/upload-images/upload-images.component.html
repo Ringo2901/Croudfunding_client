@@ -1,0 +1,23 @@
+<div class="upload-images">
+  <h2>Загрузка изображений</h2>
+  <form>
+    <div class="file-input-container">
+      <input type="file" id="file-input" (change)="onFileSelected($event)" multiple />
+      <label for="file-input">Выберите изображения</label>
+    </div>
+  </form>
+
+  <div *ngIf="previews.length > 0" class="image-preview">
+    <h3>Предпросмотр:</h3>
+    <div class="preview-grid">
+      <div *ngFor="let preview of previews; index as i" class="preview-item">
+        <img [src]="preview" alt="Preview {{ i + 1 }}" />
+        <button class="remove-btn" (click)="removeFile(i)">×</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button style="padding: 0.75rem 1.5rem" (click)="completeProject()" [disabled]="!selectedFiles.length">Загрузить все и завершить проект</button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="tabs">
+  <button
+    (click)="activeTab = 'updates'"
+    [class.active]="activeTab === 'updates'">Обновления</button>
+  <button
+    (click)="activeTab = 'comments'"
+    [class.active]="activeTab === 'comments'">Комментарии</button>
+  <button
+    (click)="activeTab = 'rewards'"
+    [class.active]="activeTab === 'rewards'">Вознаграждения</button>
+  <button
+    *ngIf="isInitiator"
+    (click)="activeTab = 'analytics'"
+    [class.active]="activeTab === 'analytics'">Аналитика</button>
+</div>
+
+<div class="tab-content">
+  <app-project-updates *ngIf="activeTab === 'updates'" [projectId]="projectId"></app-project-updates>
+  <app-project-comments *ngIf="activeTab === 'comments'" [projectId]="projectId"></app-project-comments>
+  <app-project-rewards *ngIf="activeTab === 'rewards'" [projectId]="projectId"></app-project-rewards>
+  <app-project-analytics *ngIf="activeTab === 'analytics'" [projectId]="projectId"></app-project-analytics>
+</div>

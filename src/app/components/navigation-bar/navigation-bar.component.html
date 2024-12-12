@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="logo">
+    <a href="/">Crowdfunding</a>
+  </div>
+  <ul class="nav-links">
+    <li>
+      <button (click)="navigateToProjects()">Поиск проектов</button>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <button (click)="navigateToRegister()">Зарегистрироваться</button>
+    </li>
+
+    <li *ngIf="!isAuthenticated">
+      <button (click)="navigateToLogin()">Авторизироваться</button>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <button (click)="navigateToCreateProject()">Создать проект</button>
+    </li>
+    <li *ngIf="isAuthenticated" class="dropdown">
+      <span (click)="toggleDropdown()">Аккаунт</span>
+      <ul *ngIf="isDropdownVisible" class="dropdown-menu">
+        <li><button (click)="navigateToAccount()">Мой аккаунт</button></li>
+        <li><button (click)="logout()">Выход</button></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,43 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.create-project-segment {
+  width: 100%;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.create-project-button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+.create-project-button:hover {
+  background-color: #444;
+}
+
+.popular-projects {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.popular-projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

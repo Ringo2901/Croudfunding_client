@@ -1,0 +1,27 @@
+<div class="carousel">
+  <!-- Проверяем наличие изображений -->
+  <ng-container *ngIf="mediaPaths.length > 0; else placeholder">
+    <ng-container *ngFor="let slide of mediaPaths; let i = index">
+      <img
+        *ngIf="i === currentSlide"
+        [src]="slide"
+        class="slide"
+        (error)="onImageError($event)"
+        @carouselAnimation
+      />
+    </ng-container>
+  </ng-container>
+
+  <!-- Замещающая картинка для пустого массива -->
+  <ng-template #placeholder>
+    <img ngSrc="https://metallps.ru/assets/cache_image/empty_720x540_e0a.png" class="slide" alt="Project Image" height="540" width="720"/>
+  </ng-template>
+
+  <!-- Управление слайдерами -->
+  <button class="control prev" (click)="onPreviousClick()" *ngIf="mediaPaths.length > 0">
+    <span class="arrow left"></span>
+  </button>
+  <button class="control next" (click)="onNextClick()" *ngIf="mediaPaths.length > 0">
+    <span class="arrow right"></span>
+  </button>
+</div>

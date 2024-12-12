@@ -1,0 +1,67 @@
+<div class="user-page">
+  <!-- Sidebar с меню -->
+  <div class="sidebar">
+    <ul>
+      <li (click)="selectSection('account')" [class.active]="currentSection === 'account'">Аккаунт</li>
+      <li (click)="selectSection('activity')" [class.active]="currentSection === 'activity'">Моя активность</li>
+      <li (click)="selectSection('projects')" [class.active]="currentSection === 'projects'">Мои проекты</li>
+      <li (click)="logout()">Выход</li>
+    </ul>
+  </div>
+
+  <!-- Контент по выбранному разделу -->
+  <div class="content">
+    <div *ngIf="currentSection === 'account'">
+      <h2>Информация о пользователе</h2>
+      <form (ngSubmit)="updateAccount()" class="user-form">
+        <label for="nickname">Никнейм</label>
+        <input type="text" id="nickname" [(ngModel)]="user.nickname" name="nickname" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" />
+
+        <label for="firstname">Имя</label>
+        <input type="text" id="firstname" [(ngModel)]="user.firstname" name="firstname" />
+
+        <label for="lastname">Фамилия</label>
+        <input type="text" id="lastname" [(ngModel)]="user.lastname" name="lastname" />
+
+        <button type="submit" class="submit-btn">Сохранить</button>
+      </form>
+    </div>
+
+    <div *ngIf="currentSection === 'activity'">
+      <h2>Моя активность</h2>
+      <div *ngIf="userContributions.length > 0; else noActivity">
+        <div class="contribution-list">
+          <div *ngFor="let contribution of userContributions" class="contribution-item">
+            <h3>{{ contribution.Project.title }}</h3>
+            <p>Дата: {{ contribution.contribution_date | date: 'dd.MM.yyyy' }}</p>
+            <p>Сумма: {{ contribution.amount }} Byn</p>
+            <p>Награда: {{ contribution.Reward.title }}</p>
+            <p>Сумма награды: {{ contribution.Reward.amount }}</p>
+            <button class="navigate-button" (click)="navigateToProject(contribution.project_id)">
+              Перейти к проекту
+            </button>
+          </div>
+        </div>
+      </div>
+      <ng-template #noActivity>
+        <p>Вы ещё не внесли ни одного вклада.</p>
+      </ng-template>
+    </div>
+
+
+    <div *ngIf="currentSection === 'projects'">
+      <h2>Мои проекты</h2>
+      <div class="project-tiles">
+        <div *ngFor="let project of userProjects" class="project-tile">
+          <h3>{{ project.title }}</h3>
+          <p>Start Date: {{ project.start_date | date: 'dd.MM.yyyy' }}</p>
+          <p>End Date: {{ project.end_date | date: 'dd.MM.yyyy' }}</p>
+          <button class="more-button" (click)="navigateToProject(project.id)">Подробнее</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

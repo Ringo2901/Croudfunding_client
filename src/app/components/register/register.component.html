@@ -1,0 +1,19 @@
+<div class="auth-container">
+  <h2>Регистрация</h2>
+  <form (ngSubmit)="onRegister()">
+    <div>
+      <label for="nickname">Никнейм:</label>
+      <input id="nickname" [(ngModel)]="nickname" name="nickname" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="email" name="email" type="email" required />
+    </div>
+    <div>
+      <label for="password">Пароль:</label>
+      <input id="password" [(ngModel)]="password" name="password" type="password" required />
+    </div>
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+  <p>Уже есть аккаунт? <a routerLink="/login">Авторизироваться</a></p>
+</div>

@@ -1,0 +1,43 @@
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.slide {
+  min-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.slide .info {
+  padding: 1rem;
+}
+.project-tile {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-tile:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}

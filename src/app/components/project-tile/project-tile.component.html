@@ -1,0 +1,16 @@
+<div class="project-tile">
+  <img
+    [src]="project?.media?.[0]?.file_path || 'https://via.placeholder.com/300'"
+    alt="Project Image"
+  />
+  <h3>{{ project.title }}</h3>
+  Цель сбора: {{project.goal}}
+  <div class="progress-bar">
+
+    <div
+      class="progress"
+      [style.width.%]="(project?.analytics?.total_founded / project.goal) * 100"
+    ></div>
+  </div>
+  <button class="more-button" (click)="navigateToProject(project.id)">Подробнее</button>
+</div>

@@ -1,0 +1,23 @@
+<div class="slider" *ngIf="projects.length > 0; else noProjects">
+  <div class="project-slider">
+    <div
+      class="project-tile"
+      *ngFor="let project of projects"
+      (click)="navigateToProject(project.id)"
+    >
+      <div class="slide">
+
+        <img *ngIf="project.media && project.media.length > 0" [src]="project.media?.[0].file_path" [alt]="project.title" class="project-image">
+        <p *ngIf="!project.media || project.media.length === 0">Нет доступного изображения</p>
+
+        <div class="info">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noProjects>
+  <p>Нет доступных проектов</p>
+</ng-template>

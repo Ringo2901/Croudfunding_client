@@ -1,0 +1,4 @@
+<div *ngIf="project">
+  <app-project-details [project]="project"></app-project-details>
+  <app-project-tabs [projectId]="project.id" [initiator_nickname]="project.initiator.nickname"></app-project-tabs>
+</div>

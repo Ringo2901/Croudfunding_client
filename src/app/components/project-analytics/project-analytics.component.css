@@ -1,0 +1,23 @@
+.analytics {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analytics h3, .analytics h4 {
+  margin-bottom: 10px;
+}
+
+.analytics p, .analytics li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.chart-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

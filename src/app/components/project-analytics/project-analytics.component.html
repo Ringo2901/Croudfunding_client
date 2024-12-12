@@ -1,0 +1,26 @@
+<div class="analytics">
+  <h3>Аналитика проекта</h3>
+  <div *ngIf="analyticsData">
+    <p><strong>Всего собрано:</strong> {{ analyticsData.total_founded }} BYN</p>
+    <p><strong>Общее количество вкладов:</strong> {{ analyticsData.contributions_count }}</p>
+  </div>
+  <div *ngIf="contributions.length > 0">
+    <h4>Вклады:</h4>
+    <ul>
+      <li *ngFor="let contribution of contributions">
+        Пользователь: {{ contribution.user }} - Сумма: {{ contribution.amount }} BYN
+      </li>
+    </ul>
+  </div>
+  <div class="chart-container" *ngIf="chartOptions">
+    <h4>График ежедневных вкладов</h4>
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+      [title]="chartOptions.title"
+      [dataLabels]="chartOptions.dataLabels">
+    </apx-chart>
+  </div>
+</div>

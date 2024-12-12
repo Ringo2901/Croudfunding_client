@@ -1,0 +1,44 @@
+<div class="projects-page">
+  <!-- Панель фильтров -->
+  <div class="filters">
+    <h3>Фильтры</h3>
+    <div class="filter-item">
+      <label for="search">Поиск по названию:</label>
+      <input type="text" id="search" [(ngModel)]="searchQuery" />
+    </div>
+
+    <div class="filter-item">
+      <label for="category">Категория:</label>
+      <select id="category" [(ngModel)]="selectedCategory">
+        <option value="">Все категории</option>
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+
+    <div class="filter-item">
+      <label for="type">Тип проекта:</label>
+      <select id="type" [(ngModel)]="selectedType">
+        <option value="">Все типы</option>
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <!-- Кнопка применения фильтров -->
+    <button (click)="applyFilters()">Применить фильтры</button>
+  </div>
+
+  <!-- Грид с проектами -->
+  <div class="projects-grid">
+    <app-project-tile
+      *ngFor="let project of projects"
+      [project]="project">
+    </app-project-tile>
+  </div>
+
+  <!-- Пагинация -->
+  <div class="pagination">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Назад</button>
+    <span>Страница {{ currentPage }} из {{ totalPages }}</span>
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Вперед</button>
+  </div>
+</div>

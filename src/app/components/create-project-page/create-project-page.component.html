@@ -1,0 +1,66 @@
+<div class="create-project">
+  <h2>Создание нового проекта</h2>
+  <form [formGroup]="projectForm" (ngSubmit)="createProject()">
+    <div class="form-group">
+      <label for="title">Название проекта:</label>
+      <input id="title" formControlName="title" type="text" />
+      <div *ngIf="projectForm.get('title')?.invalid && projectForm.get('title')?.touched" class="error">
+        Название обязательно.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Описание проекта:</label>
+      <textarea id="description" formControlName="description"></textarea>
+      <div *ngIf="projectForm.get('description')?.invalid && projectForm.get('description')?.touched" class="error">
+        Описание обязательно.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="goal">Цель финансирования:</label>
+      <input id="goal" formControlName="goal" type="number" />
+      <div *ngIf="projectForm.get('goal')?.invalid && projectForm.get('goal')?.touched" class="error">
+        Укажите сумму больше 0.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Категория:</label>
+      <select id="category" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group-date">
+      <label>
+        Дата начала сбора:
+        <input formControlName="startDate" type="date" />
+      </label>
+      <label>
+        Дата окончания сбора:
+        <input formControlName="endDate" type="date" />
+      </label>
+      <!-- Ошибки валидации дат -->
+      <div *ngIf="projectForm.errors?.['dateInPast']" class="error">
+        Даты не могут быть раньше текущей.
+      </div>
+      <div *ngIf="projectForm.errors?.['endDateBeforeStartDate']" class="error">
+        Дата окончания должна быть позже даты начала.
+      </div>
+      <div *ngIf="projectForm.errors?.['dateDifferenceTooLarge']" class="error">
+        Разница между датами не должна превышать один месяц.
+      </div>
+    </div>
+
+    <div class="form-group funding-type">
+      <label for="fundingType">Тип финансирования:</label>
+      <select id="fundingType" formControlName="fundingType">
+        <option value="all_or_nothing">Все или ничего</option>
+        <option value="no_obligation">Открытое финансирование</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="projectForm.invalid">Создать проект</button>
+  </form>
+</div>

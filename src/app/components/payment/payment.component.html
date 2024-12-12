@@ -1,0 +1,19 @@
+<div class="payment-container">
+  <h1>Оплата проекта: {{ projectName }}</h1>
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="amount">Введите сумму:</label>
+      <input id="amount" type="number" formControlName="amount" class="form-control" placeholder="Сумма" />
+      <div *ngIf="paymentForm.get('amount')?.invalid && paymentForm.get('amount')?.touched">
+        <small class="error">Пожалуйста, введите корректную сумму</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid">Продолжить</button>
+  </form>
+
+  <div *ngIf="isPayPalVisible">
+    <h2>Оплатить через PayPal</h2>
+    <div id="paypal-button-container"></div>
+  </div>
+</div>

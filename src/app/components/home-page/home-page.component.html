@@ -1,0 +1,10 @@
+<div class="home-page">
+  <div class="create-project-segment">
+    <button (click)="onCreateProjectClick()" class="create-project-button">Создать проект!</button>
+  </div>
+
+  <div class="popular-projects">
+    <h2>Популярные проекты</h2>
+    <app-main-carousel [projects]="popularProjects"></app-main-carousel>
+  </div>
+</div>
