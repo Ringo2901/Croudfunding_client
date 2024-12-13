@@ -1,106 +1,120 @@
+/* Общий стиль для страницы загрузки изображений */
 .upload-images {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  min-height: 100vh;
 }
 
 .upload-images h2 {
-  text-align: center;
-  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
+/* Стили для формы загрузки файлов */
 .file-input-container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-input[type='file'] {
+input[type="file"] {
   display: none;
 }
 
-label[for='file-input'] {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
+label[for="file-input"] {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
 
-label[for='file-input']:hover {
-  background-color: #0056b3;
+label[for="file-input"]:hover {
+  background-color: #2980b9;
 }
 
+/* Стили для превью изображений */
 .image-preview {
-  margin-top: 1rem;
+  margin-top: 20px;
+}
+
+.image-preview h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .preview-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 20px;
 }
 
 .preview-item {
   position: relative;
   width: 150px;
   height: 150px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   overflow: hidden;
-  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .preview-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .remove-btn {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  background-color: #d9534f;
-  color: white;
+  top: 5px;
+  right: 5px;
+  background-color: #e74c3c;
+  color: #fff;
   border: none;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  font-size: 1rem;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
   cursor: pointer;
-  line-height: 22px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
 }
 
 .remove-btn:hover {
-  background-color: #c9302c;
+  background-color: #c0392b;
 }
 
+/* Стили для кнопок действий */
 .actions {
-  display: flex;
-  justify-content: right;
-  margin-top: 1.5rem;
+  margin-top: 20px;
+  text-align: center;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
+.actions button {
+  background-color: #2ecc71;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #0056b3;
+.actions button:hover {
+  background-color: #27ae60;
 }
 
-button:disabled {
-  background-color: #bbb;
+.actions button:disabled {
+  background-color: #bdc3c7;
   cursor: not-allowed;
 }

@@ -1,0 +1,12 @@
+<div class="platform-history">
+  <h2>История нашей платформы</h2>
+  <ul class="history-list">
+    <li *ngFor="let event of historyEvents" class="history-item">
+      <div class="date">{{ event.date }}</div>
+      <div class="details">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+      </div>
+    </li>
+  </ul>
+</div>

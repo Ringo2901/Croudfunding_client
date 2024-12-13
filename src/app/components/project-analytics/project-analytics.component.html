@@ -2,7 +2,7 @@
   <h3>Аналитика проекта</h3>
   <div *ngIf="analyticsData">
     <p><strong>Всего собрано:</strong> {{ analyticsData.total_founded }} BYN</p>
-    <p><strong>Общее количество вкладов:</strong> {{ analyticsData.contributions_count }}</p>
+    <p><strong>Общее количество вкладов:</strong> {{ contributions.length }}</p>
   </div>
   <div *ngIf="contributions.length > 0">
     <h4>Вклады:</h4>

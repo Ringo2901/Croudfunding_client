@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth-service.service';
 import {ProjectService} from '../../services/project.service';
 import {MainCarouselComponent} from '../main-carousel/main-carousel.component';
+import {PlatformHistoryComponent} from '../platform-history/platform-history.component';
 
 @Component({
   selector: 'app-home-page',
@@ -13,7 +14,8 @@ import {MainCarouselComponent} from '../main-carousel/main-carousel.component';
   imports: [
     NavigationBarComponent,
     ProjectSliderComponent,
-    MainCarouselComponent
+    MainCarouselComponent,
+    PlatformHistoryComponent
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'

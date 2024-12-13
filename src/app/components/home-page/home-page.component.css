@@ -1,43 +1,48 @@
+/* Общий стиль для главной страницы */
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
+/* Сегмент для создания проекта */
 .create-project-segment {
-  width: 100%;
-  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
-  padding: 2rem 0;
+  margin-bottom: 30px;
 }
 
 .create-project-button {
-  font-size: 1.5rem;
-  padding: 1rem 2rem;
-  background-color: #555;
-  color: white;
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-family: 'Inter', sans-serif;
 }
 
 .create-project-button:hover {
-  background-color: #444;
+  background-color: #2980b9;
 }
 
+/* Сегмент популярных проектов */
 .popular-projects {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   text-align: center;
+  margin-top: 20px;
 }
 
 .popular-projects h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Стили для карусели */
+app-main-carousel {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }

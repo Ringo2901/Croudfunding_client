@@ -1,85 +1,82 @@
+/* Основной стиль для навигационной панели */
 .navbar {
+  font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background-color: #333;
+  padding: 10px 20px;
+  background-color: #2c3e50;
   color: white;
-
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Логотип */
 .navbar .logo a {
-  text-decoration: none;
+  font-size: 20px;
   color: white;
-  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.nav-links {
+.navbar .logo a:hover {
+  color: #3498db;
+}
+
+/* Список навигационных ссылок */
+.navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  font-family: 'Inter', sans-serif;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links a, .nav-links button {
-  text-decoration: none;
-  color: white;
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.nav-links button:hover,
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Стили для выпадающего меню */
-.nav-links .dropdown {
+.navbar .nav-links li {
   position: relative;
 }
 
-.nickname {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #444;
-  border-radius: 4px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 0.5rem 1rem;
-  list-style: none;
-  margin: 0;
-}
-
-.dropdown-menu li {
-  margin-bottom: 0.5rem;
-}
-
-.dropdown-menu li:last-child {
-  margin-bottom: 0;
-}
-
-.dropdown-menu button {
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem;
+.navbar .nav-links button {
   background: none;
   border: none;
   color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links button:hover {
+  color: #3498db;
+}
+
+/* Стиль выпадающего меню */
+.navbar .dropdown {
   cursor: pointer;
 }
 
-.dropdown-menu button:hover {
-  background-color: #555;
+.navbar .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.navbar .dropdown-menu li {
+  padding: 5px 20px;
+}
+
+.navbar .dropdown-menu li button {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 14px;
+}
+
+.navbar .dropdown-menu li button:hover {
+  background-color: #2c3e50;
 }

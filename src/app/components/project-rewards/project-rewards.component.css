@@ -1,81 +1,115 @@
+/* Общий стиль для контейнера вознаграждений */
 .rewards-container {
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  font-family: 'Arial', sans-serif;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.rewards-container h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Карточка вознаграждения */
 .reward-card {
-  background: #f8f9fa;
-  border-radius: 8px;
   padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reward-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .reward-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.reward-header h3 {
-  margin: 0;
-}
-
-.reward-amount {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.reward-description {
-  margin: 10px 0;
-  color: #555;
-}
-
-.reward-date {
-  font-size: 12px;
-  color: #888;
-  text-align: right;
-}
-
-.add-reward-form {
-  background: #e9ecef;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.add-reward-form h3 {
-  margin-bottom: 15px;
-}
-
-.form-group {
   margin-bottom: 10px;
 }
 
-.form-group label {
-  display: block;
+.reward-header h3 {
+  font-size: 18px;
+  color: #34495e;
+  margin: 0;
+}
+
+.reward-header .reward-amount {
+  font-size: 16px;
+  color: #3498db;
   font-weight: bold;
+}
+
+.reward-description {
+  font-size: 14px;
+  color: #7f8c8d;
+  line-height: 1.5;
+}
+
+/* Форма добавления вознаграждения */
+.add-reward-form {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.add-reward-form h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.add-reward-form .form-group {
+  margin-bottom: 15px;
+}
+
+.add-reward-form label {
+  font-size: 14px;
+  color: #34495e;
+  display: block;
   margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group textarea {
+.add-reward-form input,
+.add-reward-form textarea {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  color: #34495e;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.submit-btn {
-  background-color: #4caf50;
+.add-reward-form input:focus,
+.add-reward-form textarea:focus {
+  border-color: #3498db;
+}
+
+.add-reward-form .submit-btn {
+  background-color: #3498db;
   color: #fff;
   border: none;
   padding: 10px 20px;
+  font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.submit-btn:hover {
-  background-color: #45a049;
+.add-reward-form .submit-btn:hover {
+  background-color: #2980b9;
 }

@@ -26,7 +26,7 @@ export class ProjectsPageComponent {
   selectedType: string = '';
   currentPage: number = 1;
   totalPages: number = 1;
-  pageSize: number = 9;
+  pageSize: number = 10;
 
   constructor(private projectService: ProjectService) {}
 

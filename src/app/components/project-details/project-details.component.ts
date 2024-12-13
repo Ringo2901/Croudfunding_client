@@ -37,7 +37,7 @@ export class ProjectDetailsComponent {
       (response) => {
         this.nickname = response.user.nickname;
         this.user_id = response.user.id;
-        this.isActive = (new Date(this.project.end_date) > new Date()) && this.nickname!=this.project.initiator.nickname && !(this.nickname=="");
+        this.isActive = (new Date(this.project.start_date) <= new Date()) && (new Date(this.project.end_date) > new Date()) && this.nickname!=this.project.initiator.nickname && !(this.nickname=="");
         this.contributionService.getContributionbyProductAndUser(this.user_id, this.project.id).subscribe((data) => {
           if (data.contributions && data.contributions.length > 0) {
             this.contribution = data.contributions[0];

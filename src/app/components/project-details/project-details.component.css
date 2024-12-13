@@ -1,103 +1,87 @@
+/* Общий стиль для контейнера проекта */
 .project-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
   max-width: 1200px;
-  gap: 1.5rem;
-  padding: 1rem;
+  margin: 20px auto;
+  gap: 20px;
 }
 
+/* Стили для карусели */
 .carousel-container {
-  flex: 1 1 40%;
-  max-width: 500px;
+  flex: 1 1 50%;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Детали проекта */
 .project-details {
-  flex: 1 1 55%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex: 1 1 45%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  width: 100%;
-  margin-top: 1.5rem;
+.project-details h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
 }
 
-.actions button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
+.project-details p {
+  font-size: 16px;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
-.primary-button {
-  background-color: #76c7c0;
-  color: white;
-  font-weight: bold;
+.initiator-info p,
+.date-info p {
+  font-size: 14px;
+  color: #34495e;
+  margin: 5px 0;
 }
 
-.primary-button:hover {
-  background-color: #63b3a8;
-}
-
-.secondary-button {
-  background-color: #e0e0e0;
-  color: black;
-}
-
-.secondary-button:hover {
-  background-color: #c7c7c7;
-}
-
+/* Прогресс-бар */
 .progress-bar {
-  width: 100%;
-  background: #e0e0e0;
-  height: 20px;
+  position: relative;
+  height: 10px;
+  background-color: #ecf0f1;
   border-radius: 5px;
-  overflow: hidden;
+  margin: 15px 0;
 }
 
-.progress {
+.progress-bar .progress {
   height: 100%;
-  background: #76c7c0;
-  transition: width 0.3s;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: width 0.3s ease;
 }
 
-
+/* Кнопка поддержки */
 .btn-support {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #28a745; /* Зеленый цвет */
-  color: #fff;
   font-size: 16px;
-  font-weight: bold;
-  text-align: center;
+  color: #fff;
+  background-color: #3498db;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .btn-support:hover {
-  background-color: #218838; /* Более темный зеленый при наведении */
-}
-
-.btn-support:active {
-  background-color: #1e7e34; /* Ещё темнее при клике */
+  background-color: #2980b9;
 }
 
 .btn-support:disabled {
-  background-color: #666666; /* Ещё темнее при клике */
-}
-
-.btn-support:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  background-color: #bdc3c7;
+  cursor: not-allowed;
 }
